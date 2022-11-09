@@ -6,7 +6,7 @@ GROUP BY g.name;
 --2 количество треков, вошедших в альбомы 2019-2020 годов
 SELECT a.name album, COUNT(t.id) tracks_count, a.release_year FROM tracks t
 JOIN albums a ON a.id = t.album_id
-WHERE a.release_year >= 2019 AND a.release_year <=2020
+WHERE a.release_year BETWEEN 2019 AND 2020
 GROUP BY a.name, a.release_year;
 
 --3 средняя продолжительность треков по каждому альбому
